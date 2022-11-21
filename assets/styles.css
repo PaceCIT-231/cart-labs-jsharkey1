@@ -7,6 +7,10 @@ h2 {
 #cart img{
     max-width: 80px;
 }
+.dark-mode {
+	background-color: black;
+	color: white;
+}
 #cart p {
     color: red;
     font-weight: bold;
