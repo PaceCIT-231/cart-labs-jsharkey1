@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/modal.css">
+    <script src="assets/scripts.js" async></script>
+</head>
+
+<body>
+    <header>
+        <h1>All the Nice Things</h1>
+        <button id="dark-mode" onclick="darkMode()">Dark Mode</button>
+        <div id="cart">
+            <img src="assets/imgs/cart.png">
+            <span class="hoverText">$0</span>
+            <p id="cartItems">&nbsp;</p>
+            <button id="checkout" onclick="checkout()">Checkout Now</button>
+        </div>
+    </header>
+    <!-- The Modal -->
+    <div id="summary" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="closeSummary" class="close">&times;</span>
+                <h2>Checkout Summary</h2>
+            </div>
+            <div class="container">
+                <div id="summary-body" class="modal-body">
+                    
+                </div>
+                <div class="modal-body">
+                    <form name="finishCheckout" id="finalizeCheckout" action="thankyou.html" method="get">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" required><br>
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required><br>
+                        <input type="submit" name="submit" value="Submit">
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            let modal = document.getElementById('summary')
+            let close = document.getElementById('closeSummary')
+            function hideSummary() {
+                modal.style.display = 'none'
+            }
+            close.onclick = hideSummary
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

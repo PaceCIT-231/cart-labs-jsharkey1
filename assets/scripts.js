@@ -12,6 +12,14 @@ const cart = {
         this.currentPrice = 0;
         this.items = [];
     },
+    // copy this method!
+    getSummary: function() {
+        let summary = `<p>Number of Items: ${this.items.length}</p>
+            <h4>Details</h4>
+            <p>${this.items.join('<br>')}</p>
+            <p>Total Price: $${this.currentPrice}</p>`
+        return summary
+    },
 }
 
 function addToCart(cookie) {
@@ -32,7 +40,7 @@ function addToCart(cookie) {
     cartItems.innerText = cart.items.length
 
     let hoverText = document.querySelector('.hoverText')
-    hoverText.innerText = cart.currentPrice      
+    hoverText.innerText = cart.currentPrice; 
     
 }
 
@@ -43,17 +51,24 @@ function checkout() {
     //Let your customer know how many items they are purchasing and the price
     console.log('You have in your cart ', cart.items.length, ' items. The grand total is $', cart.currentPrice)
     
-    // let text, address;
-    let customer = prompt("Please enter your name:", "Jake Sharkey");
-    let address = prompt("Where can I send these cookies?", "861 Bedford Rd");
+    document.getElementById('summary-body').innerHTML = cart.getSummary()
+    document.getElementById('summary').style.display = "block"
     
     let hoverText = document.querySelector('.hoverText')
     hoverText.innerText = "$0"
     
-    cart.clear();
-    let cartItems = document.getElementById('cartItems')
-    cartItems.innerText = cart.items.length
+    cart.clear() 
+        let cartItems = document.getElementById('cartItems')
+        cartItems.innerText = cart.items.length
+    
+}
 
+function cartclear() {
+    cart.clear()
+        let cartItems = document.getElementById('cartItems')
+        cartItems.innerText = cart.items.length
+        let hoverText = document.querySelector('.hoverText')
+        hoverText.innerText = "$0"
 }
 
 function darkMode() {

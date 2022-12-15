@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="assets/styles.css">
+    <link rel="stylesheet" type="text/css" href="assets/modal.css">
+    <script src="assets/thankyou.js" defer></script>
+    <script src="assets/scripts.js" async></script>
+</head>
+
+<body>
+    <header>
+        <h1>All the Nice Things</h1>
+        <button id="dark-mode" onclick="darkMode()">Dark Mode</button>
+        <div id="cart">
+            <img src="assets/imgs/cart.png">
+            <span class="hoverText">$0</span>
+            <p id="cartItems">&nbsp;</p>
+            <button id="checkout" onclick="checkout()">Checkout Now</button>
+        </div>
+    </header>
+
+    <main>
+        <h1>Placed Order Successfully</h1>
+        <p>Your order is on the way <span id="name"></span>! Thanks for shopping with us!</p>
+        <p id="message"></p>
+    </main> 
+</body>
+</html>
